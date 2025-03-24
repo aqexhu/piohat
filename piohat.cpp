@@ -34,9 +34,9 @@
 // MQTT settings
 #define MQTT_HOST "192.168.199.192" // Change to your MQTT broker address
 #define MQTT_PORT 1883
-#define MQTT_TOPIC_PUB "qsmartentry-io-module/in"
-#define MQTT_TOPIC_SUB "qsmartentry-io-module/out"
-#define MQTT_CLIENT_ID "openhabian-aqex-piohat"
+#define MQTT_TOPIC_PUB "piohat-module/in"
+#define MQTT_TOPIC_SUB "piohat-module/out"
+#define MQTT_CLIENT_ID "piohat"
 
 // Queue for command communication
 std::queue<std::string> commandQueue;
@@ -63,7 +63,7 @@ struct gpiod_line *lineOUT2;
 struct timespec ts;
 struct timespec start_time, test_time;
 
-#define CONSUMER "qSmartEntry-IO-module"
+#define CONSUMER "piohat-module"
 #define POLLINTERVAL 1000
 
 void qseSwitchRelay(uint8_t relayNo, uint8_t state)
